@@ -1,0 +1,36 @@
+{
+    "dirs": {
+        "www": "<%= @user_home_dir %>/www/",
+        "storage": "<%= @user_home_dir %>/moodles"
+    },
+    "diffUrlTemplate": "https://github.com/<%= @github_username %>/moodle/compare/%headcommit%...%branch%",
+    "ci": {
+        "token": null
+    },
+    "db": {
+		<% if @pgsql_password != '' and @pgsql_user != '' %>
+        "pgsql": {
+            "passwd": "<%= @pgsql_password %>",
+            "user": "<%= @pgsql_user %>"
+        },
+		<% end %>
+        "storage": {
+			<% if @pgsql_password != '' and @pgsql_user != '' %>
+            "pgsql": {
+                "passwd": "<%= @pgsql_password %>",
+                "user": "<%= @pgsql_user %>"
+            }
+			<% end %>
+        }
+    },
+    "repositoryUrl": "git://github.com/<%= @github_username %>/moodle.git",
+    "remotes": {
+        "mine": "git@github.com:<%= @github_username %>/moodle.git"
+    },
+    "tracker": {
+        "username": "<%= @tracker_username %>"
+    },
+    "editor": null,
+    "host": "<%= @host_ip %>",
+    "path": ""
+}
