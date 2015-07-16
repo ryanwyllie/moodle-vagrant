@@ -8,8 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "dev-moodle"
   config.vm.box = "trusty64"
   config.vm.box_url = "http://files.vagrantup.com/trusty64.box"
-  config.vm.network :private_network, ip: "192.168.50.11"
-  config.vm.network :forwarded_port, guest: 4000, host: 4000
+  config.vm.network :private_network, ip: "192.168.50.50"
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
