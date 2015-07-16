@@ -3,4 +3,8 @@ class devtools {
 	include devtools::bash
 	include devtools::mdk
 	include git
+
+	class { 'java':
+		distribution => 'jre',
+	}
 }
