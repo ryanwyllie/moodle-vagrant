@@ -3,3 +3,4 @@ puppetlabs-postgresql
 puppetlabs-apache
 puppetlabs-git
 puppetlabs-java
+puppetlabs-nodejs

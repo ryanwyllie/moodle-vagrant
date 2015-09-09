@@ -1,5 +1,10 @@
 syntax on
 
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+:autocmd Syntax * syn match ExtraWhitespace /\s\+$/
+
 set showmatch
 set ignorecase
 set smartcase
