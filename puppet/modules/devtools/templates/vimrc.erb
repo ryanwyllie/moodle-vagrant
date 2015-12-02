@@ -5,10 +5,17 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$/
 
+" F2 = show / hide invisible characters
+noremap <F2> :se list!^M
+noremap! <F2> ^O:se list!^M
+
+" F4 = toggle paste
+set pastetoggle=<F4>
+
 set showmatch
 set ignorecase
 set smartcase
-set paste
+" set paste
 set expandtab
 set shiftwidth=4
 set tabstop=4

@@ -14,6 +14,7 @@ class moodle::packages (
         'php5-xmlrpc',
         'php5-ldap',
         'php5-pgsql',
+        'ghostscript',
     ]
 
     package { $packages:
