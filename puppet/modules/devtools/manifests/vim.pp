@@ -89,12 +89,14 @@ class devtools::vim (
 		require => File['vim bundle folder'],
 	}
 
+	/*
 	exec { "git clone git@github.com:2072/PHP-Indenting-for-VIm.git":
 		cwd => "${user_home_dir}/.vim/bundle/",
 		user => $user,
 		creates => "${user_home_dir}/.vim/bundle/PHP-Indenting-for-VIm/",
 		require => File['vim bundle folder'],
 	}
+	*/
 
 	exec { "git clone git://github.com/mustache/vim-mustache-handlebars.git":
 		cwd => "${user_home_dir}/.vim/bundle/",
