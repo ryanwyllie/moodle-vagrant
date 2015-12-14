@@ -23,7 +23,7 @@ class devtools::mdk (
 	exec { 'pip install --upgrade requests':
         require => Package['python-pip'],
 		# Don't update if we've already got at version 2.7.0 (or higher)
-		unless => "pip show requests | grep Version | sed -re 's/(\.|Version: )//g' | xargs test 270 -le"
+		unless => "pip show requests | grep Version | sed -re 's/(\\.|Version: )//g' | xargs test 270 -le"
     }
 
 	$mdk_path = '/opt/moodle-sdk'
