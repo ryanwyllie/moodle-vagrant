@@ -29,22 +29,4 @@ class devtools::mdk::configure (
         ensure => $ensure,
 		require => File['mdk conf dir'],
     }
-
-	file { "www dir":
-		path => "${user_home_dir}/www",
-		owner => $user,
-		ensure => $directory_ensure
-	}
-
-	file { "moodles dir":
-		path => "${user_home_dir}/moodles",
-		owner => $user,
-		ensure => $directory_ensure
-	}
-
-	file { "/var/www/m":
-		ensure => link,
-		target => "${user_home_dir}/www",
-		owner => $user,
-	}
 }

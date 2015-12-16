@@ -47,4 +47,28 @@ class devtools::mdk (
 		target => "${mdk_path}/mdk.py",
 		require => Exec['install mdk']
 	}
+
+	file { "www dir":
+        path => "${user_home_dir}/www",
+        owner => $user,
+        ensure => $directory_ensure
+    }
+
+    file { "moodles dir":
+        path => "${user_home_dir}/moodles",
+        owner => $user,
+        ensure => $directory_ensure
+    }
+
+	file { "remove html":
+		path => "/var/www/html",
+		ensure => absent
+	}
+
+    file { "/var/www/html":
+        ensure => link,
+        target => "${user_home_dir}/www",
+        owner => $user,
+		require => [File["www dir"],File["remove hmtl"]]
+    }
 }
