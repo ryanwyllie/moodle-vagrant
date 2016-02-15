@@ -60,7 +60,6 @@ class devtools::mdk (
         ensure => $directory_ensure
     }
 
-
     file { "/var/www/html":
         ensure => link,
         target => "${user_home_dir}/www",
