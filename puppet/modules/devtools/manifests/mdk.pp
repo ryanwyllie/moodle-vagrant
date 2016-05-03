@@ -64,7 +64,7 @@ class devtools::mdk (
         ensure => link,
         target => "${user_home_dir}/www",
         owner => $user,
-	require => [File["www dir"]],
-	force => true
+		force => true,
+		require => File["www dir"]
     }
 }
